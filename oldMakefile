@@ -1,0 +1,46 @@
+CFLAGS = --std=c++17 -Wall -O3
+OUTPUTNAME = kepler
+
+
+all: celestialObject.o earth.o exoplanet.o exomoon.o fileio.o functions.o jupiter.o main.o star.o sun.o timedisc.o
+	g++ $(CFLAGS) celestialObject.o earth.o exoplanet.o exomoon.o fileio.o functions.o jupiter.o main.o star.o sun.o timedisc.o -o $(OUTPUTNAME)
+	rm *.o
+
+celestialObject.o: celestialObject.cpp
+	g++ $(CFLAGS) -c celestialObject.cpp
+
+constant.o: constant.cpp
+	g++ $(CFLAGS) -c constant.cpp
+
+earth.o: earth.cpp
+	g++ $(CFLAGS) -c earth.cpp
+
+exoplanet.o: exoplanet.cpp
+	g++ $(CFLAGS) -c exoplanet.cpp
+
+exomoon.o: exomoon.cpp
+	g++ $(CFLAGS) -c exomoon.cpp
+
+fileio.o: fileio.cpp
+	g++ $(CFLAGS) -c fileio.cpp
+
+functions.o: functions.cpp
+	g++ $(CFLAGS) -c functions.cpp
+
+jupiter.o: jupiter.cpp
+	g++ $(CFLAGS) -c jupiter.cpp
+
+main.o: main.cpp
+	g++ $(CFLAGS) -c main.cpp
+
+star.o: star.cpp
+	g++ $(CFLAGS) -c star.cpp
+
+sun.o: sun.cpp
+	g++ $(CFLAGS) -c sun.cpp
+
+timedisc.o: timedisc.cpp
+	g++ $(CFLAGS) -c timedisc.cpp
+
+clean:
+	rm -f $(OUTPUTNAME) *.o

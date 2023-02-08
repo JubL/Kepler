@@ -1,0 +1,7 @@
+KEPLER
+*.dat
+bld/
+
+#CLion
+cmake*           
+.idea
